@@ -16,11 +16,12 @@ public class spawnPersonaje : MonoBehaviour
             return;
         }
 
-        // Desactiva todos primero
+        //Desactiva todos primero
         foreach (GameObject personaje in personajesDisponibles)
         {
             personaje.SetActive(false);
         }
+
 
         // Activa solo el que coincide
         foreach (GameObject personaje in personajesDisponibles)
