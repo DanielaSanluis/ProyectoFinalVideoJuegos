@@ -34,6 +34,8 @@ public class spawnPersonaje : MonoBehaviour
                 personaje.transform.position = puntoSpawn.position;
                 personaje.transform.rotation = puntoSpawn.rotation;
                 //Debug.Log("Personaje activado: " + personaje.name);
+                DatosGlobales.personajeElegido = personaje;
+
                 break;
             }
         }

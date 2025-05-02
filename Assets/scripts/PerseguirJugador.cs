@@ -3,28 +3,28 @@ using UnityEngine.AI;
 
 public class PerseguirJugador : MonoBehaviour
 {
-    private Transform jugador;
     private NavMeshAgent agente;
+    private Transform objetivo;
 
     void Start()
     {
         agente = GetComponent<NavMeshAgent>();
+        StartCoroutine(EsperarPersonaje());
+    }
 
-        // Buscar al jugador con tag "Player"
-        GameObject objJugador = GameObject.FindGameObjectWithTag("Player");
-        if (objJugador != null)
-        {
-            jugador = objJugador.transform;
-        }
+    System.Collections.IEnumerator EsperarPersonaje()
+    {
+        while (DatosGlobales.personajeElegido == null)
+            yield return null;
+
+        objetivo = DatosGlobales.personajeElegido.transform;
     }
 
     void Update()
     {
-        if (jugador != null && agente.enabled)
+        if (objetivo != null)
         {
-            agente.SetDestination(jugador.position); // Esta línea debe estar en Update
+            agente.SetDestination(objetivo.position);
         }
     }
-
-
 }

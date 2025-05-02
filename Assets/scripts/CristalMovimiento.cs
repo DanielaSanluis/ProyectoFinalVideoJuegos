@@ -3,7 +3,7 @@ using System.Collections;
 
 public class CristalMovimiento : MonoBehaviour
 {
-    public float tiempoEntreMovimientos = 3f;
+    public float tiempoEntreMovimientos = 10f;
     public float areaX = 10f;
     public float areaZ = 10f;
 
