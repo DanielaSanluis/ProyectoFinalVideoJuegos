@@ -23,6 +23,8 @@
 //    }
 //}
 
+//Lo de arriba lo dejo en caso de que no se quiera que los cristales se muevan eleatoriamente por el terreno y solo floten.
+//En dado caso borro lo de abajo y me quedo con lo comentado y borro el scrip de movimiento de los cristales.
 using UnityEngine;
 
 public class FlotarCristal : MonoBehaviour
