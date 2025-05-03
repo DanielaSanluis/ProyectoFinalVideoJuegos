@@ -9,15 +9,16 @@ TagManager:
   - PurpleMush
   - Cristal
   - gun
+  - Robot
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Robot
   - Water
   - UI
-  - 
-  - 
+  - BalaRobot
+  - BalaJugador
   - Walkable
   - 
   - NormalBlur
