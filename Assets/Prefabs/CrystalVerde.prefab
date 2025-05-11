@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 7457322940023851898}
   - component: {fileID: 336245332322661313}
   - component: {fileID: -7645657426071263643}
-  - component: {fileID: 2881449463532837010}
+  - component: {fileID: 7036233526825974580}
   m_Layer: 8
   m_Name: CrystalVerde
   m_TagString: Cristal
@@ -180,7 +180,7 @@ MonoBehaviour:
   particleEffect: {fileID: 0}
   fuerzaEmpuje: 1000
   ContadorVidas: {fileID: 0}
---- !u!114 &2881449463532837010
+--- !u!114 &7036233526825974580
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -189,12 +189,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1612675945835149094}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc97987e3f4589a4b91fa00f636f52cd, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c4e00eb34cd6344faad9f74bb4b544d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particleEffect: {fileID: 0}
-  fuerzaEmpuje: 1000
-  ContadorVidas: {fileID: 0}
+  tiempoEntreMovimientos: 5
+  areaX: 40
+  areaZ: 40
+  altura: 0.66
 --- !u!1 &3321693697458072508
 GameObject:
   m_ObjectHideFlags: 0

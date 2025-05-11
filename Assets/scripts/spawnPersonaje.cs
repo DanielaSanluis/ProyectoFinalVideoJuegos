@@ -16,11 +16,12 @@ public class spawnPersonaje : MonoBehaviour
             return;
         }
 
-        // Desactiva todos primero
+        //Desactiva todos primero
         foreach (GameObject personaje in personajesDisponibles)
         {
             personaje.SetActive(false);
         }
+
 
         // Activa solo el que coincide
         foreach (GameObject personaje in personajesDisponibles)
@@ -33,6 +34,8 @@ public class spawnPersonaje : MonoBehaviour
                 personaje.transform.position = puntoSpawn.position;
                 personaje.transform.rotation = puntoSpawn.rotation;
                 //Debug.Log("Personaje activado: " + personaje.name);
+                DatosGlobales.personajeElegido = personaje;
+
                 break;
             }
         }

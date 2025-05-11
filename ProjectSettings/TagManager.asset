@@ -3,17 +3,23 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - bala
+  - BlueMush
+  - PurpleMush
+  - Cristal
+  - gun
+  - Robot
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Robot
   - Water
   - UI
-  - 
-  - 
-  - 
+  - BalaRobot
+  - BalaJugador
+  - Walkable
   - 
   - NormalBlur
   - ColorBlur
