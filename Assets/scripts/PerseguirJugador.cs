@@ -25,6 +25,14 @@ public class PerseguirJugador : MonoBehaviour
         if (objetivo != null)
         {
             agente.SetDestination(objetivo.position);
+
+            // Si tienes un Animator, actualiza velocidad
+            Animator anim = GetComponent<Animator>();
+            if (anim != null)
+            {
+                float vel = agente.velocity.magnitude;
+                anim.SetFloat("Velocidad", vel);
+            }
         }
     }
 }
