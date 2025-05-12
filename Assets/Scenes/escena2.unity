@@ -1102,6 +1102,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.41, y: 2.47, z: 1}
   m_Center: {x: 0, y: 0.2, z: 0}
+--- !u!114 &235731194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235731184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 966514f4e08793f4ebc7ec12a8752b29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objetivo: {fileID: 0}
 --- !u!1001 &288814051
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2110,6 +2123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   balas: {fileID: 0}
   ContadorVidas: {fileID: 1054235001}
+  contadorRobots: {fileID: 783762516}
 --- !u!1 &425135848
 GameObject:
   m_ObjectHideFlags: 0
@@ -3777,6 +3791,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 8716d2988f3584c57822bb5d173e6942, type: 3}
       insertIndex: -1
       addedObject: {fileID: 235731185}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 8716d2988f3584c57822bb5d173e6942, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 235731194}
   m_SourcePrefab: {fileID: 100100000, guid: 8716d2988f3584c57822bb5d173e6942, type: 3}
 --- !u!1 &615889720
 GameObject:
@@ -4183,6 +4200,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 8716d2988f3584c57822bb5d173e6942, type: 3}
       insertIndex: -1
       addedObject: {fileID: 639478785}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 8716d2988f3584c57822bb5d173e6942, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 639478788}
   m_SourcePrefab: {fileID: 100100000, guid: 8716d2988f3584c57822bb5d173e6942, type: 3}
 --- !u!1 &639478775 stripped
 GameObject:
@@ -4321,6 +4341,19 @@ MonoBehaviour:
   velocidadDisparo: 15
   tiempoEntreDisparos: 2
   rangoDisparo: 15
+--- !u!114 &639478788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 639478775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 966514f4e08793f4ebc7ec12a8752b29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objetivo: {fileID: 0}
 --- !u!1001 &774959153
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7612,6 +7645,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 8716d2988f3584c57822bb5d173e6942, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1242159618}
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 8716d2988f3584c57822bb5d173e6942, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1242159620}
   m_SourcePrefab: {fileID: 100100000, guid: 8716d2988f3584c57822bb5d173e6942, type: 3}
 --- !u!1 &1242159610 stripped
 GameObject:
@@ -7772,6 +7808,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1242159620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1242159610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 966514f4e08793f4ebc7ec12a8752b29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objetivo: {fileID: 0}
 --- !u!1001 &1277977897
 PrefabInstance:
   m_ObjectHideFlags: 0
