@@ -29,6 +29,7 @@ public class bala : MonoBehaviour
             Debug.Log("Robot alcanzado por el jugador");
             Destroy(other.gameObject); // O reduce su vida
             Destroy(gameObject);
+            Debug.Log("Robot moridoo alcanzado por el bala de jugador");
             return;
         }
 

@@ -15,6 +15,7 @@ public class powerUp : MonoBehaviour
         {
             Destroy(other.gameObject); // Destruye la bala
             Destroy(gameObject);       // Destruye este objeto (esfera, cubo, robot, hongo, cristal)
+            ContadorVidas.text = "20";
         }
         // Si el jugador toca el objeto
         else if (other.CompareTag("Player"))
@@ -43,7 +44,7 @@ public class powerUp : MonoBehaviour
                     ContadorVidas.text = vidas.ToString();
                     PlayerPrefs.SetInt("vidas", vidas);
                 }
-
+                Debug.Log("Se quito una vida");
                 Destroy(gameObject);
             }
             // Si es hongo morado, activa superpoder y se destruye
