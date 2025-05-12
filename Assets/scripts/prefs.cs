@@ -5,9 +5,7 @@ using TMPro;
 public class prefs : MonoBehaviour
 {
     public TMP_Text balas;
-    /// <summary>
-    /// /Start is called once before the first execution of Update after the MonoBehaviour is created
-    /// </summary>
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     public TMP_Text ContadorVidas;
     void Start()
@@ -20,8 +18,8 @@ public class prefs : MonoBehaviour
 
     private void Awake()
     {
-        balas.text = PlayerPrefs.GetInt("balas").ToString();
-        loadData();
+       // balas.text = PlayerPrefs.GetInt("balas").ToString();
+       loadData();
     }
     public void saveData()
     {
@@ -38,9 +36,8 @@ public class prefs : MonoBehaviour
 
     public void erraseData()
     {
-        PlayerPrefs.DeleteAll(); //borra todo
+        //PlayerPrefs.DeleteAll(); //borra todo
         PlayerPrefs.DeleteKey("balas");
         balas.text = "0";
     }
 }
-
