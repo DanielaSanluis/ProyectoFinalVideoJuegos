@@ -5,15 +5,20 @@ using TMPro;
 public class prefs : MonoBehaviour
 {
     public TMP_Text balas;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+     public TMP_Text ContadorVidas;
+    public TMP_Text contadorRobots;
+    private int robotsDestruidos = 0;
 
-    public TMP_Text ContadorVidas;
     void Start()
     {
         //LE CAMBIE ESTABA ASI: int vidas = PlayerPrefs.GetInt("vidas", 3);
         PlayerPrefs.GetInt("vidas", 3);// 3 por defecto si no hay nada guardado
         int vidas = 3;
         ContadorVidas.text = vidas.ToString();
+
+        // Reiniciar contador de robots
+        robotsDestruidos = 0;
+        contadorRobots.text = "0";
     }
 
     private void Awake()
@@ -40,4 +45,11 @@ public class prefs : MonoBehaviour
         PlayerPrefs.DeleteKey("balas");
         balas.text = "0";
     }
+
+    public void SumarRobotDestruido()
+    {
+        robotsDestruidos++;
+        contadorRobots.text = robotsDestruidos.ToString();
+    }
+
 }

@@ -117,8 +117,8 @@ public class movimiento3d : MonoBehaviour
             Rigidbody rb = nuevaBala.GetComponent<Rigidbody>();
 
             //aumenta contador de balas
-            numBalas++;
-            balas.text = numBalas.ToString();
+            //numBalas++;
+            //balas.text = numBalas.ToString();
 
             //aplicar fuerza a la bala si tiene un rigidbody
             if (rb != null)

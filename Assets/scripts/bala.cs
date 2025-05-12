@@ -24,13 +24,33 @@ public class bala : MonoBehaviour
         if (other.gameObject == dueño)
             return;
 
+        //if (gameObject.layer == LayerMask.NameToLayer("BalaJugador") && other.CompareTag("Robot"))
+        //{
+        //    Debug.Log("Robot alcanzado por el jugador");
+        //    Destroy(other.gameObject); // O reduce su vida
+        //    Destroy(gameObject);
+        //    return;
+        //}
         if (gameObject.layer == LayerMask.NameToLayer("BalaJugador") && other.CompareTag("Robot"))
         {
             Debug.Log("Robot alcanzado por el jugador");
-            Destroy(other.gameObject); // O reduce su vida
+
+            // Sumar al contador
+            GameObject canvas = GameObject.Find("Canvas"); // o el nombre real de tu Canvas
+            if (canvas != null)
+            {
+                prefs p = canvas.GetComponent<prefs>();
+                if (p != null)
+                {
+                    p.SumarRobotDestruido();
+                }
+            }
+
+            Destroy(other.gameObject);
             Destroy(gameObject);
             return;
         }
+
 
         if (gameObject.layer == LayerMask.NameToLayer("BalaRobot") && other.CompareTag("Jugador"))
         {
