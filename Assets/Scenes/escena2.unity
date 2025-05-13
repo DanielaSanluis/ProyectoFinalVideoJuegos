@@ -206,7 +206,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 57797195}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 406625620}
+        m_TargetAssemblyTypeName: ManagerPausa, Assembly-CSharp
+        m_MethodName: regresarMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &57797195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2233,6 +2245,7 @@ MonoBehaviour:
   balas: {fileID: 0}
   ContadorVidas: {fileID: 1054235001}
   contadorRobots: {fileID: 783762516}
+  panelGameOver: {fileID: 1491168189}
 --- !u!1 &425135848
 GameObject:
   m_ObjectHideFlags: 0
@@ -8222,7 +8235,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1364987597}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 406625621}
+        m_TargetAssemblyTypeName: prefs, Assembly-CSharp
+        m_MethodName: ReiniciarEscena
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1364987597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9001,7 +9026,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1491168190
 RectTransform:
   m_ObjectHideFlags: 0
