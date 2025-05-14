@@ -649,6 +649,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7645657426071263643, guid: 0c51d4b209d8c1b4a99673a1aeeb6ac7, type: 3}
+      propertyPath: ContadorVidas
+      value: 
+      objectReference: {fileID: 1054235001}
     - target: {fileID: 336245332322661313, guid: 0c51d4b209d8c1b4a99673a1aeeb6ac7, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -7419,6 +7423,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7645657426071263643, guid: 0c51d4b209d8c1b4a99673a1aeeb6ac7, type: 3}
+      propertyPath: ContadorVidas
+      value: 
+      objectReference: {fileID: 1054235001}
     - target: {fileID: 1612675945835149094, guid: 0c51d4b209d8c1b4a99673a1aeeb6ac7, type: 3}
       propertyPath: m_Name
       value: CrystalVerde (1)
@@ -9314,6 +9322,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7645657426071263643, guid: 0c51d4b209d8c1b4a99673a1aeeb6ac7, type: 3}
+      propertyPath: ContadorVidas
+      value: 
+      objectReference: {fileID: 1054235001}
     - target: {fileID: 1612675945835149094, guid: 0c51d4b209d8c1b4a99673a1aeeb6ac7, type: 3}
       propertyPath: m_Name
       value: CrystalVerde (2)

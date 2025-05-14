@@ -36,13 +36,6 @@ public class powerUp : MonoBehaviour
             // Si es hongo azul, le baja una vida y se destruye
             if (gameObject.CompareTag("BlueMush"))
             {
-                //if (ContadorVidas != null)
-                //{
-                //    int vidas = int.Parse(ContadorVidas.text);
-                //    vidas = Mathf.Max(0, vidas - 1);
-                //    ContadorVidas.text = vidas.ToString();
-                //    PlayerPrefs.SetInt("vidas", vidas);
-                //}
                 GameObject canvas = GameObject.Find("Canvas"); // O cambia "Canvas" si tiene otro nombre
                 if (canvas != null)
                 {
