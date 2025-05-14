@@ -7,11 +7,9 @@ public class bala : MonoBehaviour
     public float velocidad;
     public float tiempoVida = 2.0f;
     public Rigidbody rb;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    
     void Start()
     {
-        //rb.AddForce(transform.forward*velocidad*Time.deltaTime);
-
         if (rb == null)
             rb = GetComponent<Rigidbody>();
 
@@ -24,13 +22,6 @@ public class bala : MonoBehaviour
         if (other.gameObject == dueño)
             return;
 
-        //if (gameObject.layer == LayerMask.NameToLayer("BalaJugador") && other.CompareTag("Robot"))
-        //{
-        //    Debug.Log("Robot alcanzado por el jugador");
-        //    Destroy(other.gameObject); // O reduce su vida
-        //    Destroy(gameObject);
-        //    return;
-        //}
         if (gameObject.layer == LayerMask.NameToLayer("BalaJugador") && other.CompareTag("Robot"))
         {
             Debug.Log("Robot alcanzado por el jugador");

@@ -164,7 +164,7 @@ public class movimiento3d : MonoBehaviour
 
     private IEnumerator RestaurarVelocidadYSalto()
     {
-        yield return new WaitForSeconds(5f); // El poder dura 5 segundos
+        yield return new WaitForSeconds(7f); // El poder dura 5 segundos
 
         velocidad -= 20f;
         salto -= 5f;

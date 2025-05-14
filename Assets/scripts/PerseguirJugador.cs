@@ -8,6 +8,15 @@ public class PerseguirJugador : MonoBehaviour
 
     void Start()
     {
+        GameObject canvas = GameObject.Find("Canvas");
+        if (canvas != null)
+        {
+            prefs p = canvas.GetComponent<prefs>();
+            if (p != null)
+            {
+                p.RegistrarRobot();
+            }
+        }
         agente = GetComponent<NavMeshAgent>();
         StartCoroutine(EsperarPersonaje());
     }
@@ -26,7 +35,6 @@ public class PerseguirJugador : MonoBehaviour
         {
             agente.SetDestination(objetivo.position);
 
-            // Si tienes un Animator, actualiza velocidad
             Animator anim = GetComponent<Animator>();
             if (anim != null)
             {

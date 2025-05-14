@@ -2,17 +2,22 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class prefs : MonoBehaviour
 {
+    [HideInInspector]
+    public int totalRobotsEnEscena = 0;
     public TMP_Text balas;
     public TMP_Text ContadorVidas;
     public TMP_Text contadorRobots;
-    public GameObject panelGameOver; // referencia al panel
+
+    public GameObject panelGameOver;//Panel para mensaje de "Game Over"
+    public GameObject panelSiguienteNivel; //panel para pasar al siguiente nivel
 
     private int robotsDestruidos = 0;
     private int vidas = 3;
-
+    
     void Start()
     {
         vidas = 3;
@@ -20,8 +25,6 @@ public class prefs : MonoBehaviour
 
         robotsDestruidos = 0;
         contadorRobots.text = "0";
-
-       // panelGameOver.SetActive(false); // oculta el panel al iniciar
     }
 
     private void Awake()
@@ -51,9 +54,13 @@ public class prefs : MonoBehaviour
     {
         robotsDestruidos++;
         contadorRobots.text = robotsDestruidos.ToString();
+
+        if (robotsDestruidos >= totalRobotsEnEscena)
+        {
+            MostrarPanelSiguienteNivel();
+        }
     }
 
-    // NUEVO: resta vida y verifica Game Over
     public void RestarVida()
     {
         vidas = Mathf.Max(vidas - 1, 0);
@@ -66,23 +73,34 @@ public class prefs : MonoBehaviour
         }
     }
 
-    // NUEVO: activa panel de Game Over
     public void GameOver()
     {
         Time.timeScale = 0f;
-        panelGameOver.SetActive(true);
+        if (panelGameOver != null)
+            panelGameOver.SetActive(true);
     }
 
-    // NUEVO: método para botón "Reintentar"
     public void ReiniciarEscena()
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    // NUEVO: método para botón "Salir"
     public void SalirJuego()
     {
         Application.Quit();
     }
+
+    public void MostrarPanelSiguienteNivel()
+    {
+        Time.timeScale = 0f;
+        if (panelSiguienteNivel != null)
+            panelSiguienteNivel.SetActive(true);
+    }
+
+    public void RegistrarRobot()
+    {
+        totalRobotsEnEscena++;
+    }
 }
+
