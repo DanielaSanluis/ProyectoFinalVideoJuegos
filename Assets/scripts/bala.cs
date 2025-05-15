@@ -43,7 +43,7 @@ public class bala : MonoBehaviour
         }
 
 
-        if (gameObject.layer == LayerMask.NameToLayer("BalaRobot") && other.CompareTag("Jugador"))
+        if (gameObject.layer == LayerMask.NameToLayer("BalaRobot") && other.CompareTag("Player"))
         {
             int vidas = PlayerPrefs.GetInt("vidas", 3);
             vidas = Mathf.Max(vidas - 1, 0);
