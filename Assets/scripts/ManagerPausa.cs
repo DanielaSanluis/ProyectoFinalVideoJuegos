@@ -68,4 +68,14 @@ public class ManagerPausa : MonoBehaviour
         SceneManager.LoadScene(4); //nivel2
         Time.timeScale = 1;
     }
+
+    public void SalirJuego()
+    {
+        Application.Quit();
+    }
+
+    public void Continuar()
+    {
+        SceneManager.LoadScene("escena2");
+    }
 }

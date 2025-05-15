@@ -461,7 +461,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1490638973}
         m_TargetAssemblyTypeName: ManagerPausa, Assembly-CSharp
-        m_MethodName: nivel2
+        m_MethodName: SalirJuego
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
