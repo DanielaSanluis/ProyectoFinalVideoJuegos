@@ -78,4 +78,18 @@ public class ManagerPausa : MonoBehaviour
     {
         SceneManager.LoadScene("escena2");
     }
+
+    public void nivel3()
+    {
+        //Recibe el indice de la escena
+        SceneManager.LoadScene(5); //nivel3
+        Time.timeScale = 1;
+    }
+
+    public void nivel1()
+    {
+        //Recibe el indice de la escena
+        SceneManager.LoadScene(2); //nivel1
+        Time.timeScale = 1;
+    }
 }
