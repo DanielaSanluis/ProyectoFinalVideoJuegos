@@ -17,7 +17,11 @@ public class prefs : MonoBehaviour
 
     private int robotsDestruidos = 0;
     private int vidas = 3;
-    
+
+    public GameObject[] robotsExtra; 
+    private bool robotsExtraActivados = false;
+
+
     void Start()
     {
         vidas = 3;
@@ -54,12 +58,54 @@ public class prefs : MonoBehaviour
     {
         robotsDestruidos++;
         contadorRobots.text = robotsDestruidos.ToString();
+        Debug.Log("robotsDestruidos = " + robotsDestruidos);
 
-        if (robotsDestruidos >= totalRobotsEnEscena)
+        int totalEsperado = totalRobotsEnEscena + robotsExtra.Length;
+        Debug.Log($"Comparando: robotsDestruidos={robotsDestruidos} vs totalEsperado={totalEsperado}");
+
+        if (robotsExtra.Length > 0)
         {
-            MostrarPanelSiguienteNivel();
+            if (!robotsExtraActivados && robotsDestruidos >= totalRobotsEnEscena)
+            {
+                Debug.Log("Activando robots extra...");
+                ActivarRobotsExtra();
+                return;
+            }
+
+            if (robotsExtraActivados && robotsDestruidos >= totalEsperado)
+            {
+                Debug.Log("Mostrando panel siguiente nivel...");
+                MostrarPanelSiguienteNivel();
+            }
+        }
+        else
+        {
+            // No hay robots extra, muestra el panel directamente
+            if (robotsDestruidos >= totalRobotsEnEscena)
+            {
+                Debug.Log("Mostrando panel (no hay robots extra)...");
+                MostrarPanelSiguienteNivel();
+            }
         }
     }
+
+
+
+    void ActivarRobotsExtra()
+    {
+        robotsExtraActivados = true;
+
+        foreach (GameObject r in robotsExtra)
+        {
+            if (r != null)
+            {
+                r.SetActive(true);
+            }
+        }
+
+        Debug.Log("¡Robots extra activados!");
+    }
+
 
     public void RestarVida()
     {
@@ -93,10 +139,20 @@ public class prefs : MonoBehaviour
 
     public void MostrarPanelSiguienteNivel()
     {
+        Debug.Log(" MostrarPanelSiguienteNivel() llamado.");
         Time.timeScale = 0f;
+
         if (panelSiguienteNivel != null)
+        {
             panelSiguienteNivel.SetActive(true);
+            Debug.Log(" Panel activado correctamente.");
+        }
+        else
+        {
+            Debug.LogError(" panelSiguienteNivel no está asignado.");
+        }
     }
+
 
     public void RegistrarRobot()
     {

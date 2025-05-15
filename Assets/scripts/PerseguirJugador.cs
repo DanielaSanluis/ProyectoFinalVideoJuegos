@@ -6,17 +6,24 @@ public class PerseguirJugador : MonoBehaviour
     private NavMeshAgent agente;
     private Transform objetivo;
 
+    public bool esRobotExtra = false; // Marcar en el Inspector si es uno de los 2 extras
+
     void Start()
     {
-        GameObject canvas = GameObject.Find("Canvas");
-        if (canvas != null)
+        // Solo registrar si no es extra
+        if (!esRobotExtra)
         {
-            prefs p = canvas.GetComponent<prefs>();
-            if (p != null)
+            GameObject canvas = GameObject.Find("Canvas");
+            if (canvas != null)
             {
-                p.RegistrarRobot();
+                prefs p = canvas.GetComponent<prefs>();
+                if (p != null)
+                {
+                    p.RegistrarRobot();
+                }
             }
         }
+
         agente = GetComponent<NavMeshAgent>();
         StartCoroutine(EsperarPersonaje());
     }
@@ -44,3 +51,4 @@ public class PerseguirJugador : MonoBehaviour
         }
     }
 }
+
