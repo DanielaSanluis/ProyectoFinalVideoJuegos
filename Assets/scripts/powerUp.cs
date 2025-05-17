@@ -19,13 +19,12 @@ public class powerUp : MonoBehaviour
         // Si el jugador toca el objeto
         else if (other.CompareTag("Player"))
         {
-            // Efecto visual (si se asignó)
             if (particleEffect != null)
             {
                 Destroy(Instantiate(particleEffect, transform.position, Quaternion.identity), 1.5f);
             }
 
-            // Empuje al jugador
+            // Empuja al jugador
             CharacterController cc = other.GetComponent<CharacterController>();
             if (cc != null)
             {
@@ -36,13 +35,13 @@ public class powerUp : MonoBehaviour
             // Si es hongo azul, le baja una vida y se destruye
             if (gameObject.CompareTag("BlueMush"))
             {
-                GameObject canvas = GameObject.Find("Canvas"); // O cambia "Canvas" si tiene otro nombre
+                GameObject canvas = GameObject.Find("Canvas"); 
                 if (canvas != null)
                 {
                     prefs p = canvas.GetComponent<prefs>();
                     if (p != null)
                     {
-                        p.RestarVida(); // Esto ya se encarga de actualizar el contador, PlayerPrefs y mostrar el panel si es necesario
+                        p.RestarVida(); 
                     }
                 }
 
@@ -76,8 +75,6 @@ public class powerUp : MonoBehaviour
                     Destroy(gameObject);
                 }
             }
-
-            // Si NO es ninguno de los anteriores (robot, muro, etc.), NO se destruye
         }
     }
 

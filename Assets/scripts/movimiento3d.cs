@@ -4,16 +4,15 @@ using System.Collections;
 
 public class movimiento3d : MonoBehaviour
 {
-    // Referencias a componentes del personaje
     CharacterController controlador;
     Animator anim;
 
     // Variables de movimiento
     public Vector3 direccion;
-    public float gravedad = 9.81f; // Dejamos la gravedad original
+    public float gravedad = 9.81f; 
     public float rotacion;
     public float velRotacion = 5f;
-    public float salto = 7f; // Mantenemos un salto moderado
+    public float salto = 7f; 
     public float velocidad = 5f;
     public float ver;
 
@@ -26,7 +25,6 @@ public class movimiento3d : MonoBehaviour
     public int numBalas;
     public TMP_Text balas;
 
-    //En caso de que se requiera reporducir el audio por codigo
     public AudioSource audioSource;
     public AudioClip disparoClip;
 
@@ -156,8 +154,8 @@ public class movimiento3d : MonoBehaviour
 
     public void AumentarVelocidadYSalto()
     {
-        velocidad += 20f; // o lo que quieras aumentar
-        salto += 5f; // o lo que quieras para brincar más alto
+        velocidad += 20f; 
+        salto += 5f; 
 
         StartCoroutine(RestaurarVelocidadYSalto());
     }

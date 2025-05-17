@@ -18,7 +18,6 @@ public class DisparoRobot : MonoBehaviour
 
     System.Collections.IEnumerator EsperarObjetivo()
     {
-        // Esperar hasta que el personaje esté activo
         while (DatosGlobales.personajeElegido == null)
             yield return null;
 
@@ -47,7 +46,7 @@ public class DisparoRobot : MonoBehaviour
         transform.LookAt(new Vector3(objetivo.position.x, transform.position.y, objetivo.position.z));
 
         GameObject balaGO = Instantiate(proyectilPrefab, puntoDisparo.position, puntoDisparo.rotation);
-        balaGO.layer = LayerMask.NameToLayer("BalaRobot"); //Añádelo aquí
+        balaGO.layer = LayerMask.NameToLayer("BalaRobot");
 
         bala balaScript = balaGO.GetComponent<bala>();
         if (balaScript != null)

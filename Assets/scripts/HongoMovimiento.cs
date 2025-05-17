@@ -4,10 +4,9 @@ using System.Collections;
 public class HongoMovimiento : MonoBehaviour
 {
     public float tiempoEntreMovimientos = 2f; // cada cuántos segundos se mueve
-    public float areaX = 40f; // tamaño del plano en el eje X (ajústalo)
-    public float areaZ = 40f; // tamaño del plano en el eje Z (ajústalo)
-    //public float altura = 1f; // altura fija a la que quieres que flote el hongo
-
+    public float areaX = 40f; 
+    public float areaZ = 40f;
+   
     private void Start()
     {
         StartCoroutine(MoverAleatoriamente());

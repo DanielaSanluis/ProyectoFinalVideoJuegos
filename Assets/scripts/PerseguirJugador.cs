@@ -6,11 +6,10 @@ public class PerseguirJugador : MonoBehaviour
     private NavMeshAgent agente;
     private Transform objetivo;
 
-    public bool esRobotExtra = false; // Marcar en el Inspector si es uno de los 2 extras
+    public bool esRobotExtra = false; 
 
     void Start()
     {
-        // Solo registrar si no es extra
         if (!esRobotExtra)
         {
             GameObject canvas = GameObject.Find("Canvas");

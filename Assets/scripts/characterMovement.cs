@@ -11,14 +11,12 @@ public class characterMovement : MonoBehaviour
     public CharacterController cc;
     private Rigidbody rb;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         this.cc = this.gameObject.GetComponent<CharacterController>();
         rb = this.gameObject.GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         direccion = Vector3.zero;
@@ -30,7 +28,7 @@ public class characterMovement : MonoBehaviour
         //this.transform.position += direccion*Time.deltaTime;
         cc.Move(direccion*Time.deltaTime);
 
-        if (Input.GetKeyUp(KeyCode.Space)) //se puede elegir la tecla que se quiera
+        if (Input.GetKeyUp(KeyCode.Space))
         {
             Debug.Log("Space");
             direccion.y += salto;

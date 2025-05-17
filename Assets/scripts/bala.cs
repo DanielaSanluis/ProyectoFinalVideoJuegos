@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class bala : MonoBehaviour
 {
-    public GameObject dueño; // Quien disparó esta bala
+    public GameObject dueño;
 
     public float velocidad;
     public float tiempoVida = 2.0f;
@@ -27,7 +27,7 @@ public class bala : MonoBehaviour
             Debug.Log("Robot alcanzado por el jugador");
 
             // Sumar al contador
-            GameObject canvas = GameObject.Find("Canvas"); // o el nombre real de tu Canvas
+            GameObject canvas = GameObject.Find("Canvas"); 
             if (canvas != null)
             {
                 prefs p = canvas.GetComponent<prefs>();

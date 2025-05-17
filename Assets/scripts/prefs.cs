@@ -80,7 +80,6 @@ public class prefs : MonoBehaviour
         }
         else
         {
-            // No hay robots extra, muestra el panel directamente
             if (robotsDestruidos >= totalRobotsEnEscena)
             {
                 Debug.Log("Mostrando panel (no hay robots extra)...");
@@ -139,13 +138,11 @@ public class prefs : MonoBehaviour
 
     public void MostrarPanelSiguienteNivel()
     {
-        Debug.Log(" MostrarPanelSiguienteNivel() llamado.");
         Time.timeScale = 0f;
 
         if (panelSiguienteNivel != null)
         {
             panelSiguienteNivel.SetActive(true);
-            Debug.Log(" Panel activado correctamente.");
         }
         else
         {
