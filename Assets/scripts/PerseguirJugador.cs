@@ -50,5 +50,24 @@ public class PerseguirJugador : MonoBehaviour
             }
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("El robot tocó al jugador");
+
+            GameObject canvas = GameObject.Find("Canvas");
+            if (canvas != null)
+            {
+                prefs p = canvas.GetComponent<prefs>();
+                if (p != null)
+                {
+                    p.RestarVida();
+                }
+            }
+        }
+    }
+
 }
 
