@@ -1,30 +1,32 @@
 using UnityEngine;
 
-public class cristalRosa : MonoBehaviour
+public class CristalRosa : MonoBehaviour
 {
-    public GameObject efectoMuerte; // opcional: partículas
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            // Busca todos los objetos con el script PerseguirJugador
-            PerseguirJugador[] robots = Object.FindObjectsByType<PerseguirJugador>(FindObjectsSortMode.None);
+            // Buscar todos los robots en la escena
+            PerseguirJugador[] todosLosRobots = GameObject.FindObjectsByType<PerseguirJugador>(FindObjectsSortMode.None);
 
-            foreach (PerseguirJugador robot in robots)
+            foreach (PerseguirJugador robot in todosLosRobots)
             {
-                if (!robot.esRobotExtra) // Solo mata a los primeros 3
+                // Solo afectar a los robots normales (no los extras)
+                if (!robot.esRobotExtra)
                 {
-                    if (efectoMuerte != null)
-                    {
-                        Instantiate(efectoMuerte, robot.transform.position, Quaternion.identity);
-                    }
-
                     Destroy(robot.gameObject);
+
+                    // Sumar al contador de destruidos
+                    prefs p = GameObject.Find("Canvas")?.GetComponent<prefs>();
+                    if (p != null)
+                    {
+                        p.SumarRobotDestruido();
+                    }
                 }
             }
 
-            Destroy(gameObject); // Destruye el cristal rosa
+            // Desactivar el cristal después de activarse
+            gameObject.SetActive(false);
         }
     }
 }

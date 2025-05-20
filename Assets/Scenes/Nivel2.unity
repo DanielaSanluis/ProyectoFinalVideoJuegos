@@ -1981,15 +1981,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4618117445236788, guid: 4aa7f4f0acab60742bea9a9f6a3bb144, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4618117445236788, guid: 4aa7f4f0acab60742bea9a9f6a3bb144, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4618117445236788, guid: 4aa7f4f0acab60742bea9a9f6a3bb144, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 4618117445236788, guid: 4aa7f4f0acab60742bea9a9f6a3bb144, type: 3}
       propertyPath: m_LocalRotation.w
@@ -10340,7 +10340,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 725812e196b67204491f109e27432556, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  efectoMuerte: {fileID: 3907405567825006720, guid: 9319748ccf456f74eb2975bef5cbab05, type: 3}
 --- !u!135 &1666115694
 SphereCollider:
   m_ObjectHideFlags: 0
