@@ -117,32 +117,16 @@ public class prefs : MonoBehaviour
             return; // No se quitan vidas (en este momento)
         }
 
-        int vidas = PlayerPrefs.GetInt("vidas", 3);
-        vidas--;
-
-        if (vidas < 0) vidas = 0;
+        vidas = Mathf.Max(vidas - 1, 0);
+        ContadorVidas.text = vidas.ToString();
 
         PlayerPrefs.SetInt("vidas", vidas);
-        ContadorVidas.text = vidas.ToString();
-        Debug.Log("Vida restada. Vidas actuales: " + vidas);
 
         if (vidas <= 0)
         {
-            // muerte, reinicio, etc.
             Debug.Log("¡Jugador sin vidas!");
             GameOver();
         }
-
-        /*
-        vidas = Mathf.Max(vidas - 1, 0);
-        ContadorVidas.text = vidas.ToString();
-        PlayerPrefs.SetInt("vidas", vidas);
-
-        if (vidas <= 0)
-        {
-            GameOver();
-        }
-        */
     }
 
     public void GameOver()
