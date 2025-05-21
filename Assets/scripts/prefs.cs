@@ -130,6 +130,7 @@ public class prefs : MonoBehaviour
         {
             // muerte, reinicio, etc.
             Debug.Log("¡Jugador sin vidas!");
+            GameOver();
         }
 
         /*
@@ -164,6 +165,7 @@ public class prefs : MonoBehaviour
 
     public void MostrarPanelSiguienteNivel()
     {
+        Debug.Log("Se llamó a MostrarPanelSiguienteNivel()");
         Time.timeScale = 0f;
 
         if (panelSiguienteNivel != null)

@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class cristalRosa : MonoBehaviour
 {
-    public GameObject cristalMorado; // Asignar desde el inspector (¡debe estar inactivo!)
+    public GameObject cristalMorado; 
 
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            // 1. Destruir los primeros 3 robots
+            // destruye los primeros 3 robots
             foreach (PerseguirJugador robot in FindObjectsByType<PerseguirJugador>(FindObjectsSortMode.None))
             {
                 if (!robot.esRobotExtra)
@@ -17,24 +17,24 @@ public class cristalRosa : MonoBehaviour
                 }
             }
 
-            // 2. Activar robots extra desde prefs
+            // Activar robots extra desde prefs
             GameObject canvas = GameObject.Find("Canvas");
             if (canvas != null)
             {
                 prefs p = canvas.GetComponent<prefs>();
                 if (p != null)
                 {
-                    p.ActivarRobotsExtra(); // Este debe ser el método que ya tienes
+                    p.ActivarRobotsExtra();
                 }
             }
 
-            // 3. Activar el cristal morado
+            // activa el cristal morado
             if (cristalMorado != null)
             {
                 cristalMorado.SetActive(true);
             }
 
-            // 4. Destruir este cristal rosa
+            // destrye este cristal rosa
             Destroy(gameObject);
         }
     }

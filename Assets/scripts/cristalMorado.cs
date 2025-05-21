@@ -17,7 +17,7 @@ public class cristalMorado : MonoBehaviour
                 }
             }
 
-            Destroy(gameObject); // Destruir el cristal morado tras usarlo
+            Destroy(gameObject); // destruye el cristal morado 
         }
     }
 }
