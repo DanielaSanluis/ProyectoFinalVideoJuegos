@@ -9953,7 +9953,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'FELICIDADES!!
 
-    Haz destruido a todos los enemigos en este nivel'
+    Haz destruido a todos los enemigos en este nivel; no
+    tengas miedo de tocar el cristal rosa en el siguiente, te ayudara.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1b3451f3a115aec48b5cf1dcabd2a9c6, type: 2}
   m_sharedMaterial: {fileID: 2487151209289184869, guid: 1b3451f3a115aec48b5cf1dcabd2a9c6, type: 2}
@@ -10018,7 +10019,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -101.43552, y: 6.0558167, z: -92.35181, w: -112.033264}
+  m_margin: {x: -101.43552, y: -144.09094, z: -92.35181, w: -112.033264}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

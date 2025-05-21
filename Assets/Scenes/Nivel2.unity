@@ -5571,7 +5571,7 @@ MonoBehaviour:
   m_text: 'FELICIDADES!!
 
     Haz destruido a todos los enemigos. Encuentra la bazooka
-    en el siguiente.'
+    en el siguiente. '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1b3451f3a115aec48b5cf1dcabd2a9c6, type: 2}
   m_sharedMaterial: {fileID: 2487151209289184869, guid: 1b3451f3a115aec48b5cf1dcabd2a9c6, type: 2}

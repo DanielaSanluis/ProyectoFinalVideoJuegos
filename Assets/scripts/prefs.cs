@@ -18,6 +18,8 @@ public class prefs : MonoBehaviour
     private int robotsDestruidos = 0;
     private int vidas = 3;
 
+    public int proteccionesRestantes = 0; //para el cristal morado, evita perder vidas
+
     public GameObject[] robotsExtra; 
     private bool robotsExtraActivados = false;
 
@@ -90,7 +92,7 @@ public class prefs : MonoBehaviour
 
 
 
-    void ActivarRobotsExtra()
+    public void ActivarRobotsExtra()
     {
         robotsExtraActivados = true;
 
@@ -108,6 +110,29 @@ public class prefs : MonoBehaviour
 
     public void RestarVida()
     {
+        if (proteccionesRestantes > 0)
+        {
+            proteccionesRestantes--;
+            Debug.Log("Golpe recibido, pero protegido. Quedan: " + proteccionesRestantes);
+            return; // No se quitan vidas (en este momento)
+        }
+
+        int vidas = PlayerPrefs.GetInt("vidas", 3);
+        vidas--;
+
+        if (vidas < 0) vidas = 0;
+
+        PlayerPrefs.SetInt("vidas", vidas);
+        ContadorVidas.text = vidas.ToString();
+        Debug.Log("Vida restada. Vidas actuales: " + vidas);
+
+        if (vidas <= 0)
+        {
+            // muerte, reinicio, etc.
+            Debug.Log("¡Jugador sin vidas!");
+        }
+
+        /*
         vidas = Mathf.Max(vidas - 1, 0);
         ContadorVidas.text = vidas.ToString();
         PlayerPrefs.SetInt("vidas", vidas);
@@ -116,6 +141,7 @@ public class prefs : MonoBehaviour
         {
             GameOver();
         }
+        */
     }
 
     public void GameOver()
