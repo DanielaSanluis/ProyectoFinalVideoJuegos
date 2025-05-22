@@ -1,8 +1,10 @@
 using UnityEngine;
+using System.Collections;
 
 public class cristalRosa : MonoBehaviour
 {
-    public GameObject cristalMorado; 
+    public GameObject cristalMorado;
+    public GameObject avisoCristalMorado;
 
     void OnTriggerEnter(Collider other)
     {
@@ -39,8 +41,23 @@ public class cristalRosa : MonoBehaviour
                 cristalMorado.SetActive(true);
             }
 
+            // mostrar avisoCristalMorado
+            //GameObject avisoCanvas = GameObject.Find("avisoCristalMorado");
+            if (avisoCristalMorado != null)
+            {
+                avisoCristalMorado.SetActive(true);
+                StartCoroutine(OcultarAviso(avisoCristalMorado, 5f));
+            }
+
             // destrye este cristal rosa
             Destroy(gameObject);
         }
     }
+
+    IEnumerator OcultarAviso(GameObject aviso, float segundos)
+    {
+        yield return new WaitForSeconds(segundos);
+        aviso.SetActive(false);
+    }
+
 }
