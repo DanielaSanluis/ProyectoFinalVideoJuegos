@@ -23,6 +23,11 @@ public class prefs : MonoBehaviour
     public GameObject[] robotsExtra; 
     private bool robotsExtraActivados = false;
 
+    //para las vidas extra
+    public GameObject vidasExtra; // se activa cuando hay protecciones
+    public TMP_Text ContadorVidasExtra;     
+
+
 
     void Start()
     {
@@ -31,6 +36,11 @@ public class prefs : MonoBehaviour
 
         robotsDestruidos = 0;
         contadorRobots.text = "0";
+
+        //para las vidas extra
+        vidasExtra.SetActive(false);
+        ContadorVidasExtra.gameObject.SetActive(false);
+
     }
 
     private void Awake()
@@ -113,7 +123,30 @@ public class prefs : MonoBehaviour
         if (proteccionesRestantes > 0)
         {
             proteccionesRestantes--;
+
+            //para las vidas extra
+            // Actualiza el contador de TMP
+            ContadorVidasExtra.text = proteccionesRestantes.ToString();
             Debug.Log("Golpe recibido, pero protegido. Quedan: " + proteccionesRestantes);
+
+            // Si ya no hay protecciones, oculta los textos
+            if (proteccionesRestantes <= 0)
+            {
+                vidasExtra.SetActive(false);
+                ContadorVidasExtra.gameObject.SetActive(false);
+            }
+
+
+            /*
+            if (vidasExtra != null)
+                vidasExtra.text = proteccionesRestantes.ToString();
+
+            if (proteccionesRestantes == 0 && ContadorVidasExtra != null)
+            {
+                ContadorVidasExtra.SetActive(false);
+            }
+            */
+
             return; // No se quitan vidas (en este momento)
         }
 

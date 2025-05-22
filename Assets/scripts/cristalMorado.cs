@@ -14,6 +14,14 @@ public class cristalMorado : MonoBehaviour
                 {
                     p.proteccionesRestantes = 3;
                     Debug.Log("Protección activada. Puedes recibir 3 golpes sin perder vidas.");
+
+                    // Mostrar contador de protecciones (de vidas extra)
+                    if (p.vidasExtra != null)
+                        p.vidasExtra.SetActive(true);
+
+                    if (p.ContadorVidasExtra  != null)
+                        p.ContadorVidasExtra.text = p.proteccionesRestantes.ToString();
+
                 }
             }
 
