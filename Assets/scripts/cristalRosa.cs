@@ -46,18 +46,35 @@ public class cristalRosa : MonoBehaviour
             if (avisoCristalMorado != null)
             {
                 avisoCristalMorado.SetActive(true);
-                StartCoroutine(OcultarAviso(avisoCristalMorado, 5f));
+                //StartCoroutine(OcultarAviso(avisoCristalMorado, 2f));
             }
 
             // destrye este cristal rosa
-            Destroy(gameObject);
+            //Destroy(gameObject);
+
+            // Muestra el aviso y espera 5 segundos antes de ocultarlo y destruir el cristal rosa
+            if (avisoCristalMorado != null)
+            {
+                StartCoroutine(OcultarAviso(avisoCristalMorado, 5f));
+            }
+            else
+            {
+                // Si no hay aviso, destruye el cristal rosa de inmediato
+                Destroy(gameObject);
+            }
+
         }
     }
 
     IEnumerator OcultarAviso(GameObject aviso, float segundos)
     {
+        //nuevo
+        aviso.SetActive(true);
+
         yield return new WaitForSeconds(segundos);
         aviso.SetActive(false);
+        // Ahora sí es seguro destruir el cristal rosa (este GameObject)
+        Destroy(gameObject);
     }
 
 }
