@@ -1808,16 +1808,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 316019462}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 406625619}
+  m_Father: {fileID: 2069110197}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 141.20001, y: 1}
+  m_AnchoredPosition: {x: 183.10004, y: -4.799988}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &316019464
@@ -2636,7 +2636,6 @@ RectTransform:
   - {fileID: 1054235000}
   - {fileID: 992829855}
   - {fileID: 2069110197}
-  - {fileID: 316019463}
   - {fileID: 971614078}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2684,8 +2683,8 @@ MonoBehaviour:
   - {fileID: 880768918}
   - {fileID: 1434089275}
   - {fileID: 607542780}
-  ContadorVidasExtra: {fileID: 0}
-  vidasExtra: {fileID: 0}
+  vidasExtra: {fileID: 2069110196}
+  ContadorVidasExtra: {fileID: 316019464}
 --- !u!1 &425135848
 GameObject:
   m_ObjectHideFlags: 0
@@ -15615,7 +15614,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 316019463}
   m_Father: {fileID: 406625619}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

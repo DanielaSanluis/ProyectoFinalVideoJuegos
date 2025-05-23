@@ -20,11 +20,12 @@ public class cristalMorado : MonoBehaviour
                         p.vidasExtra.SetActive(true);
 
                     if (p.ContadorVidasExtra  != null)
+                    {
                         p.ContadorVidasExtra.text = p.proteccionesRestantes.ToString();
-
+                        p.ContadorVidasExtra.gameObject.SetActive(true); //tambien se active el contador de vidas extra 
+                    }
                 }
             }
-
             Destroy(gameObject); // destruye el cristal morado 
         }
     }

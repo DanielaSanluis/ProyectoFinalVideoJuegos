@@ -24,8 +24,8 @@ public class prefs : MonoBehaviour
     private bool robotsExtraActivados = false;
 
     //para las vidas extra
-    public GameObject vidasExtra; // se activa cuando hay protecciones
-    public TMP_Text ContadorVidasExtra;     
+    public GameObject vidasExtra; // se activa cuando hay protecciones 
+    public TMP_Text ContadorVidasExtra;   //contador, inicia en 3 disminuye a 1
 
 
 
@@ -132,21 +132,12 @@ public class prefs : MonoBehaviour
             // Si ya no hay protecciones, oculta los textos
             if (proteccionesRestantes <= 0)
             {
-                vidasExtra.SetActive(false);
-                ContadorVidasExtra.gameObject.SetActive(false);
+                if (vidasExtra != null)
+                    vidasExtra.SetActive(false); //inicie desactivado
+
+                if (ContadorVidasExtra != null)
+                    ContadorVidasExtra.gameObject.SetActive(false); //inicie desactivado
             }
-
-
-            /*
-            if (vidasExtra != null)
-                vidasExtra.text = proteccionesRestantes.ToString();
-
-            if (proteccionesRestantes == 0 && ContadorVidasExtra != null)
-            {
-                ContadorVidasExtra.SetActive(false);
-            }
-            */
-
             return; // No se quitan vidas (en este momento)
         }
 
