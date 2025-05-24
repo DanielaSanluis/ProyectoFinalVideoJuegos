@@ -413,7 +413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82cb2c9f651549948869cffa1deaea31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nombrePersonaje: Kael
+  personajeIndex: 3
 --- !u!1 &212315794
 GameObject:
   m_ObjectHideFlags: 0
@@ -837,7 +837,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82cb2c9f651549948869cffa1deaea31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nombrePersonaje: Lira
+  personajeIndex: 1
 --- !u!1 &650817069
 GameObject:
   m_ObjectHideFlags: 0
@@ -1431,7 +1431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82cb2c9f651549948869cffa1deaea31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nombrePersonaje: Althea
+  personajeIndex: 2
 --- !u!1 &1379910834
 GameObject:
   m_ObjectHideFlags: 0
@@ -2204,7 +2204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82cb2c9f651549948869cffa1deaea31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nombrePersonaje: Noah
+  personajeIndex: 0
 --- !u!1 &1863337205
 GameObject:
   m_ObjectHideFlags: 0

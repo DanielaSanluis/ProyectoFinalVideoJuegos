@@ -6,6 +6,8 @@ public class SpawnerCompanero : MonoBehaviour
     public GameObject[] personajesEnEscena; // Los 4 personajes
     private int personajePrincipalIndex;
     private int companeroIndex;
+    public int companeroIndexSeleccionado = -1; //guarda el índice del compañero
+
 
     void Start()
     {
@@ -35,6 +37,8 @@ public class SpawnerCompanero : MonoBehaviour
 
         // Activar el compañero
         personajesEnEscena[companeroIndex].SetActive(true);
+
+        companeroIndexSeleccionado = companeroIndex;
 
         Debug.Log("Compañero activado: " + personajesEnEscena[companeroIndex].name);
     }

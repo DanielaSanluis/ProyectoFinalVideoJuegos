@@ -6633,10 +6633,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   personajesEnEscena:
-  - {fileID: 5993250881094893583}
   - {fileID: 460723413725550277}
   - {fileID: 4134656409657802082}
   - {fileID: 1643196688557690815}
+  - {fileID: 5993250881094893583}
+  companeroIndexSeleccionado: -1
 --- !u!4 &814494248
 Transform:
   m_ObjectHideFlags: 0
@@ -17283,6 +17284,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9117683943184357280, guid: e0fc8c3dc1d9ee043b642ed17fe5f636, type: 3}
+      propertyPath: spawner
+      value: 
+      objectReference: {fileID: 814494247}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
