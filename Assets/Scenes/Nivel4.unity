@@ -7765,7 +7765,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 406625620}
         m_TargetAssemblyTypeName: ManagerPausa, Assembly-CSharp
-        m_MethodName: nivel2
+        m_MethodName: nivel3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
