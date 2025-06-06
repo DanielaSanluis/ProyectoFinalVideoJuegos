@@ -5,16 +5,21 @@ public class PerseguirJugador : MonoBehaviour
 {
     private NavMeshAgent agente;
     private Transform objetivo;
-    private Rigidbody rb; //rigitbody para gravedad AGREGADO NUEVO PRUEVA
+    private Rigidbody rb;
 
-    public bool esRobotExtra = false; 
-    private Animator animator; //para nivel5
+    public bool esRobotExtra = false;
+    private Animator animator;
+
+    private float velocidadOriginal;
 
     void Start()
     {
-        agente = GetComponent<NavMeshAgent>(); //para nivel5
-        rb = GetComponent<Rigidbody>(); //para nivel5
-        animator = GetComponent<Animator>(); //para nivel 5
+        agente = GetComponent<NavMeshAgent>();
+        rb = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
+
+        if (agente != null)
+            velocidadOriginal = agente.speed;
 
         if (!esRobotExtra)
         {
@@ -23,9 +28,7 @@ public class PerseguirJugador : MonoBehaviour
             {
                 prefs p = canvas.GetComponent<prefs>();
                 if (p != null)
-                {
                     p.RegistrarRobot();
-                }
             }
         }
 
@@ -58,21 +61,19 @@ public class PerseguirJugador : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("El robot toc� al jugador");
+            Debug.Log("El robot tocó al jugador");
 
             GameObject canvas = GameObject.Find("Canvas");
             if (canvas != null)
             {
                 prefs p = canvas.GetComponent<prefs>();
                 if (p != null)
-                {
                     p.RestarVida();
-                }
             }
         }
     }
 
-    // para que el robot flote
+    // Flotar temporal
     public void IniciarFlotacion(float tiempo)
     {
         StartCoroutine(FlotarTemporalmente(tiempo));
@@ -80,17 +81,17 @@ public class PerseguirJugador : MonoBehaviour
 
     private System.Collections.IEnumerator FlotarTemporalmente(float tiempo)
     {
-        if (rb != null)
+        if (rb != null && agente != null)
         {
             agente.enabled = false;
             rb.isKinematic = false;
             rb.useGravity = false;
-            rb.linearVelocity = new Vector3(0, 2f, 0); // flotar hacia arriba
+            rb.linearVelocity = new Vector3(0, 2f, 0); // flotar
         }
 
         yield return new WaitForSeconds(tiempo);
 
-        if (rb != null)
+        if (rb != null && agente != null)
         {
             rb.linearVelocity = Vector3.zero;
             rb.useGravity = true;
@@ -99,12 +100,19 @@ public class PerseguirJugador : MonoBehaviour
         }
     }
 
-    // para aumentar velocidad de persecuci�n
-    public void AumentarVelocidad(float nuevaVelocidad)
+    // Aumenta velocidad temporalmente
+    public void AumentarVelocidadTemporal(float nuevaVelocidad, float duracion)
     {
-        if (agente != null)
-            agente.speed = nuevaVelocidad;
+        StartCoroutine(VelocidadTemporal(nuevaVelocidad, duracion));
     }
 
+    private System.Collections.IEnumerator VelocidadTemporal(float nuevaVelocidad, float duracion)
+    {
+        if (agente != null)
+        {
+            agente.speed = nuevaVelocidad;
+            yield return new WaitForSeconds(duracion);
+            agente.speed = velocidadOriginal;
+        }
+    }
 }
-

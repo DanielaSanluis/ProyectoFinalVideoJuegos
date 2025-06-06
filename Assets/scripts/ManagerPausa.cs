@@ -86,4 +86,9 @@ public class ManagerPausa : MonoBehaviour
         SceneManager.LoadScene(6); //nivel4
         Time.timeScale = 1;
     }
+    public void nivel5()
+    {
+        SceneManager.LoadScene(7); //nivel4
+        Time.timeScale = 1;
+    }
 }
