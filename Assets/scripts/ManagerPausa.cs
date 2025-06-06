@@ -88,7 +88,7 @@ public class ManagerPausa : MonoBehaviour
     }
     public void nivel5()
     {
-        SceneManager.LoadScene(7); //nivel4
+        SceneManager.LoadScene(7); //nivel5
         Time.timeScale = 1;
     }
 }

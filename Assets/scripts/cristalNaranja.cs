@@ -2,11 +2,27 @@ using UnityEngine;
 
 public class cristalNaranja : MonoBehaviour
 {
-    public float tiempoFlotar = 2f;
+    public float tiempoFlotar = 10f;
     public float velocidadRapida = 10f;
     public float tiempoRapido = 3f;
+    public float tiempoDesaparicion = 5f; // Tiempo antes de que desaparezca automaticamente
 
     private bool activado = false;
+    private float tiempoInicio;
+
+    void Start()
+    {
+        tiempoInicio = Time.time;
+    }
+
+    void Update()
+    {
+        if (!activado && Time.time - tiempoInicio >= tiempoDesaparicion)
+        {
+            // desaparece aunque no sea tocado
+            gameObject.SetActive(false);
+        }
+    }
 
     void OnTriggerEnter(Collider other)
     {
@@ -31,13 +47,12 @@ public class cristalNaranja : MonoBehaviour
                 }
             }
 
-            gameObject.SetActive(false); // opcional, desaparece el cristal
+            gameObject.SetActive(false); // se desactiva al tocarlo
         }
     }
 
     private bool JugadorTocoCristalAntesDe5Segundos()
     {
-        // Reemplaza esto con tu lógica real
-        return true; // o false según la condición real de tiempo
+        return Time.time - tiempoInicio <= tiempoDesaparicion;
     }
 }
