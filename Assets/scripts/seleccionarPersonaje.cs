@@ -15,6 +15,7 @@ public class seleccionarPersonaje : MonoBehaviour
 
         // para cuando se quiera seleccionar desde su nombre en vez del indice
         PlayerPrefs.SetString("personajeSeleccionado", nombrePersonaje);
+        PlayerPrefs.Save(); // Asegura que se guarde inmediatamente
         Debug.Log("Personaje seleccionado: " + nombrePersonaje);
         SceneManager.LoadScene("Instrucciones"); //escena instrucciones
 
