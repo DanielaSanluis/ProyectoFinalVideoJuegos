@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class cristalMorado : MonoBehaviour
 {
+    public managerCompañero manager;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -26,6 +28,12 @@ public class cristalMorado : MonoBehaviour
                         p.ContadorVidasExtra.gameObject.SetActive(true); //tambien se active el contador de vidas extra 
                     }
                 }
+            }
+
+            // se activa al compañero aleatorio
+            if (manager != null)
+            {
+                manager.ActivarCompañeroAleatorio();
             }
 
             Destroy(gameObject); // destruye el cristal morado 

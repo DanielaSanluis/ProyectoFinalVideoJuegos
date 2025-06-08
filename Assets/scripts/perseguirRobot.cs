@@ -27,6 +27,7 @@ public class perseguirRobot : MonoBehaviour
                 anim.SetFloat("Velocidad", vel);
             }
         }
+        if (agente == null || !agente.enabled) return;
     }
 
     void BuscarRobotCercano()

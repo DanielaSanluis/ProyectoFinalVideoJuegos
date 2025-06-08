@@ -1,61 +1,35 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class managerCompañero : MonoBehaviour
 {
-    public GameObject[] personajes; // Todos los personajes en la escena
-    public GameObject cristalMorado;
-    public float distanciaAparicion = 2f; // distancia desde el jugador donde aparecerá el compañero
+    public GameObject[] duplicadosCompañeros; // ← KaelDuplicado, NoahDuplicado, etc.
+    public Transform puntoAparicionCompañero;
+    private GameObject compañeroActivo;
 
-    private bool companeroActivado = false;
-
-    void Update()
+    // Este método será llamado desde el cristal morado
+    public void ActivarCompañeroAleatorio()
     {
-        // Asegurarse que solo ocurra en Nivel5 y que el cristal ya fue tocado (destruido)
-        if (!companeroActivado &&
-            SceneManager.GetActiveScene().name == "Nivel5" &&
-            cristalMorado == null)
+        if (duplicadosCompañeros.Length == 0)
         {
-            ActivarCompanero();
-            companeroActivado = true;
-        }
-    }
-
-    void ActivarCompanero()
-    {
-        string nombreSeleccionado = PlayerPrefs.GetString("personajeSeleccionado", "");
-
-        GameObject personajePrincipal = null;
-        var candidatos = new System.Collections.Generic.List<GameObject>();
-
-        // Identifica al personaje principal y los posibles compañeros
-        foreach (GameObject personaje in personajes)
-        {
-            if (personaje.name == nombreSeleccionado)
-            {
-                personajePrincipal = personaje;
-            }
-            else
-            {
-                candidatos.Add(personaje);
-            }
-        }
-
-        if (personajePrincipal == null || candidatos.Count == 0)
-        {
-            Debug.LogWarning("No se encontró el personaje principal o no hay candidatos.");
+            Debug.LogWarning("No hay duplicados de compañeros asignados.");
             return;
         }
 
-        // Selecciona compañero al azar
-        GameObject companero = candidatos[Random.Range(0, candidatos.Count)];
+        int indice = Random.Range(0, duplicadosCompañeros.Length);
+        compañeroActivo = duplicadosCompañeros[indice];
 
-        // Aparece cerca del jugador
-        Vector3 offset = new Vector3(1.5f, 0, 1.5f);
-        companero.transform.position = personajePrincipal.transform.position + offset;
+        if (compañeroActivo.tag == "Player")
+        {
+            compañeroActivo.tag = "Untagged";
+        }
 
-        companero.SetActive(true);
+        compañeroActivo.SetActive(true);
 
-        Debug.Log("Compañero activado: " + companero.name);
+        if (puntoAparicionCompañero != null)
+        {
+            compañeroActivo.transform.position = puntoAparicionCompañero.position;
+        }
+
+        Debug.Log("Compañero activado: " + compañeroActivo.name);
     }
 }
