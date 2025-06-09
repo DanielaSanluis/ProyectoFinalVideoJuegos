@@ -2077,6 +2077,8 @@ MonoBehaviour:
   panelSiguienteNivel: {fileID: 1143143403}
   proteccionesRestantes: 0
   robotsExtra: []
+  vidasExtra: {fileID: 0}
+  ContadorVidasExtra: {fileID: 0}
 --- !u!4 &447116698 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8640160468007213860, guid: ced1748d135b9d24eb47cef1fb53d13f, type: 3}
